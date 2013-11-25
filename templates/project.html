@@ -1,0 +1,80 @@
+<template name="project">
+	{{#with model}}
+	<h1>this is project {{this.name}}!</h1>
+	{{/with}}
+	{{> tasks}}
+
+	{{!-- Task --}}
+	{{#if currentSection 'task'}}
+		{{> task}}
+	{{/if}}
+
+</template>
+
+<template name="tasks">
+	<div class="project-tasks">
+		<div>
+			<input type="text" id="task-name"/>
+			<input type="button" class="add-task" value="add Task">
+		</div>
+		<ul>
+			{{#each taskList}}
+				<li class="{{isSelected}}">
+					<a href="/project/{{this.project}}/{{this._id}}">{{this.name}}</a>
+					<span>{{this.time}}/{{this.estimation}}</span>
+					<span><input type="checkbox"></span>
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	<ul>
+
+	</ul>
+</template>
+
+<template name="task">
+	<div class="task">
+		{{#with model}}
+			<h2>{{this.name}}</h2>
+			<div>
+				<h3>time</h3>
+				<label for="time-estimation">Time Estimation:</label>
+				<input type="text" id="time-estimation" value="{{this.estimation}}"/>
+				<label for="time-spent">Time already spent:</label>
+				<input type="text" id="time-spent" value="{{this.time}}"/>
+			</div>
+			<div>
+				<h3>Utils</h3>
+				<label for="add-utils">Add utilities:</label>
+				<textarea id="add-utils"></textarea>
+				<input type="button" class="util-btn" value="Add it!"/>
+			</div>
+			<div class="utils">
+				{{#each utilsList}}
+					<p>{{this}}</p>
+				{{/each}}
+			</div>
+			{{> subtasks}}
+		{{/with}}
+	</div>
+	
+</template>
+
+<template name="subtasks">
+	<div>
+		<h3>subTasks</h3>
+		<label for="add-subtask">Add subTask:</label>
+		<input type="text" id="add-subtask"/>
+		<textarea id="subtask-descr"></textarea>
+		<input type="button" class="subtask-btn" value="Add it!"/>
+		<ul>
+			{{#each subtasksList}}
+				<li>
+					<span>{{this.name}}</span>
+					<p>{{this.longdescr}}</p>
+					<input type="checkbox" checked="{{this.done}}">
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+</template>

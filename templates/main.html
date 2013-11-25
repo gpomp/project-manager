@@ -1,0 +1,32 @@
+<head>
+  <title>manage-projects</title>
+</head>
+
+<body>
+	<div class="container">
+		{{getPage}}
+
+		{{> content}}
+	</div>
+
+</body>
+
+<template name="content">
+	{{!-- Home --}}
+	{{> projects}}
+
+	{{!-- Project --}}
+	{{#if currentPage 'project'}}
+		{{> project}}
+	{{/if}}
+</template>
+
+<template name="projects">
+	<select class="projects-list">
+		{{#each projectList}}
+      		<option value="{{this._id}}">{{this.name}}</option>
+    	{{/each}}
+	</select>
+	<input id="pr-name" type="text"/>
+	<input type="button" class="add" value="add project"/>
+</template>

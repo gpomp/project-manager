@@ -1,0 +1,390 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getCurrentProject"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"pr",
+				"projects"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"u",
+				"ul	Tag"
+			],
+			[
+				"al",
+				"text-align"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"pad",
+				"padding"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 1144,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "templates/main.html",
+			"settings":
+			{
+				"buffer_size": 573,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/project.js",
+			"settings":
+			{
+				"buffer_size": 385,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "templates/project.html",
+			"settings":
+			{
+				"buffer_size": 337,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/work/leaderboard/leaderboard.js",
+		"/D/work/leaderboard/leaderboard.html",
+		"/D/work/manage-projects/client/templates/projects.html",
+		"/D/work/manage-projects/client/js/projects.js",
+		"/D/work/manage-projects/server/js/projects.js",
+		"/D/work/manage-projects/manage-projects.less",
+		"/D/work/manage-projects/manage-projects.html",
+		"/D/work/manage-projects/manage-project.sublime-workspace",
+		"/D/work/manage-projects/client/less/styles.less",
+		"/D/work/manage-projects/.meteor/local/build/programs/client/app/manage-projects.less",
+		"/D/work/manage-projects/.meteor/local/build/programs/client/app.html",
+		"/D/work/lunch-app/app/styles/main.less",
+		"/D/work/lunch-app/app/scripts/models/AdressModel.js",
+		"/D/work/lunch-app/app/scripts/views/appView.js",
+		"/D/work/lunch-app/app/scripts/main.js",
+		"/D/work/lunch-app/app/index.html",
+		"/D/work/lunch-app/app/scripts/views/mapView.js",
+		"/D/work/lunch-app/app/scripts/hello.js",
+		"/D/work/experiments/radius/Gruntfile.js",
+		"/D/work/experiments/radius/app/index.html",
+		"/D/work/experiments/radius/app/scripts/main.js",
+		"/D/work/experiments/radius/app/scripts/app.js",
+		"/D/work/yeoman-generator/generator-threejs/app/templates/_index.html",
+		"/D/work/yeoman-generator/generator-threejs/app/templates/_Scene.js",
+		"/D/work/yeoman-generator/generator-threejs/app/templates/_script.js",
+		"/D/work/yeoman-generator/generator-threejs/app/index.js",
+		"/D/work/yeoman-generator/generator-threejs/app/templates/_Gruntfile.js",
+		"/D/work/test-three-generator/app/scripts/script.js",
+		"/D/work/test/app/index.html",
+		"/D/work/portfolio/app/scripts/hello.js",
+		"/D/work/portfolio/app/scripts/Scene.js",
+		"/D/work/portfolio/dist/scripts/main.js",
+		"/D/work/yeoman-generator/generator-threejs/app/templates/_package.json",
+		"/D/work/portfolio/bower.json",
+		"/D/work/portfolio/package.json",
+		"/D/work/yeoman-generator/generator-threejs/app/templates/_bower.json",
+		"/D/work/yeoman-generator/generator-threejs/app/templates/bowerrc",
+		"/D/work/gos/src/assets/less/gos/mixins.less",
+		"/D/work/gos/src/assets/less/gos/variables.less",
+		"/D/work/gos/src/assets/less/styles.less",
+		"/D/work/gos/src/templates/index.html",
+		"/D/work/experiments/webgl/ribbon/index.html",
+		"/D/work/gos/src/templates/components/home-nav.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"projectList",
+			"selected_name",
+			"Y",
+			".map",
+			"map.",
+			"darken",
+			"1024px"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"@screen-md"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "js/main.js",
+					"settings":
+					{
+						"buffer_size": 1144,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								756,
+								819
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 448.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "templates/main.html",
+					"settings":
+					{
+						"buffer_size": 573,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								277,
+								277
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Handlebars/Handlebars.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/project.js",
+					"settings":
+					{
+						"buffer_size": 385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								102,
+								102
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "templates/project.html",
+					"settings":
+					{
+						"buffer_size": 337,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								166,
+								171
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Handlebars/Handlebars.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 260.0,
+	"status_bar_visible": true
+}
