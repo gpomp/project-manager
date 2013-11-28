@@ -1,4 +1,196 @@
 @import "packages/bootstrap-less/lib/less/bootstrap.lessimport";
-h1 {
-	color:#FF0000;
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight:400;
+	color: #FFF;
+}
+
+input[type=text] {
+	.form-control();
+	height: auto;
+	display: inline-block;
+}
+
+select {
+	.form-control();
+	height: auto;
+}
+
+a {
+	color:#CCC;
+
+	&:hover {
+		color:#CCC;
+	}
+}
+
+.project-title {
+	h1 {
+		font-weight: 600;
+		.make-xs-column(8);
+	}
+
+	a.delete {
+		.make-xs-column(2);
+		font-size: 2em;
+		margin-top: 1em;
+		&:hover {
+			text-decoration: none;
+			color: #FFF;
+		}
+	}
+}
+
+
+
+h2, h3 {
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+ul {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #FFF;
+		max-height: 10em;
+		overflow: auto;
+		li {
+			list-style: none;
+			display: block;
+			width: 100%;
+			padding: 1em;
+			border-bottom: 1px solid #AAA;
+			.clearfix();
+			
+
+			a {
+				.make-xs-column(1);
+				&:first-child {
+					.make-xs-column(8);
+				}
+
+				&:last-child {
+					&:hover {
+						text-decoration: none;
+						color: #FFF;
+					}
+				}
+			}
+
+			span {
+				.make-xs-column(2);	
+				&.done {
+					.make-xs-column(1);	
+				}
+			}
+
+			&.selected {
+				background: #222;
+
+				a {
+					font-weight: 600;
+				}
+			}
+
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+
+.row {
+	margin: 0;
+	padding: 1em;
+}
+
+.error {
+	color: #FF0000;
+}
+
+.add-task-section, .add-utils-section, .add-subtask-section {
+	display: none;
+}
+
+.container {
+	background: #333;
+	padding: 0;
+	@media (max-width:@screen-sm-max) {
+		width: 100%;
+	}
+
+	@media (max-width:@screen-md-max) {
+		width: 95%;
+	}
+}
+
+.projects {
+	width: 100%;
+	padding: 1em;
+	background: #000;
+	.clearfix();
+	div {
+		&:first-child {
+			float: left;
+		}
+
+		&:last-child {
+			float: right;
+		}
+	}
+}
+
+.time-labels {
+	.clearfix();
+	label {
+		.make-xs-column(4);
+		text-align: center;
+	}
+}
+
+
+.time-inputs {
+
+	.clearfix();
+	input {
+		.make-xs-column(4);
+		font-size: 4em;
+		font-weight: 600;
+		background: transparent;
+		border: 0;
+		color: #FFF;
+		text-align: center;
+	}
+}
+
+.subtasks {
+	ul {
+		margin: 0 1em;
+		li {
+			.clearfix();
+			span {
+				.make-xs-column(3);
+			}
+
+			p {
+				.make-xs-column(7);
+			}
+
+			div.done {
+				.make-xs-column(1);
+			}
+
+			a.delete {
+				.make-xs-column(1);
+			}
+		}
+	}
+}
+
+.modal {
+	color: #000;
 }

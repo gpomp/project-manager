@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"ma",
+				"make-xs-column"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"clea",
+				"clearfix"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
 				"get",
 				"getCurrentProject"
 			],
@@ -22,10 +46,6 @@
 			[
 				"fun",
 				"function"
-			],
-			[
-				"font",
-				"font-size"
 			],
 			[
 				"marg",
@@ -71,7 +91,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 1144,
+				"buffer_size": 1655,
 				"line_ending": "Windows"
 			}
 		},
@@ -79,15 +99,23 @@
 			"file": "templates/main.html",
 			"settings":
 			{
-				"buffer_size": 573,
+				"buffer_size": 793,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/project.js",
+			"file": "js/task.js",
 			"settings":
 			{
-				"buffer_size": 385,
+				"buffer_size": 2605,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "less/styles.less",
+			"settings":
+			{
+				"buffer_size": 1505,
 				"line_ending": "Windows"
 			}
 		},
@@ -95,7 +123,7 @@
 			"file": "templates/project.html",
 			"settings":
 			{
-				"buffer_size": 337,
+				"buffer_size": 2276,
 				"line_ending": "Windows"
 			}
 		}
@@ -103,9 +131,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 58.0,
+		"height": 196.0,
 		"selected_items":
 		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -132,6 +164,14 @@
 	},
 	"file_history":
 	[
+		"/D/work/manage-projects/js/project.js",
+		"/D/work/manage-projects/packages/bootstrap-less/lib/less/variables.lessimport",
+		"/D/work/manage-projects/templates/project.html",
+		"/D/work/manage-projects/.meteor/local/build-garbage-1ewal6q/programs/client/packages/livedata.js",
+		"/D/work/manage-projects/.meteor/local/build-garbage-1ewal6q/programs/client/app.html",
+		"/D/work/manage-projects/.meteor/local/build-garbage-1ewal6q/programs/client/packages/jquery.js",
+		"/D/work/manage-projects/.meteor/packages",
+		"/D/work/manage-projects/templates/task.html",
 		"/D/work/leaderboard/leaderboard.js",
 		"/D/work/leaderboard/leaderboard.html",
 		"/D/work/manage-projects/client/templates/projects.html",
@@ -192,6 +232,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"page",
 			"projectList",
 			"selected_name",
 			"Y",
@@ -217,7 +258,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -225,15 +266,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 1144,
+						"buffer_size": 1655,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								756,
-								819
+								112,
+								112
 							]
 						],
 						"settings":
@@ -242,7 +283,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 448.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -252,15 +293,15 @@
 					"file": "templates/main.html",
 					"settings":
 					{
-						"buffer_size": 573,
+						"buffer_size": 793,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								277,
-								277
+								445,
+								445
 							]
 						],
 						"settings":
@@ -269,32 +310,32 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 363.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "js/project.js",
+					"file": "js/task.js",
 					"settings":
 					{
-						"buffer_size": 385,
+						"buffer_size": 2605,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								102,
-								102
+								257,
+								257
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 0.0,
+						"translation.x": 36.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -302,23 +343,50 @@
 				},
 				{
 					"buffer": 3,
-					"file": "templates/project.html",
+					"file": "less/styles.less",
 					"settings":
 					{
-						"buffer_size": 337,
+						"buffer_size": 1505,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								166,
-								171
+								531,
+								531
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Handlebars/Handlebars.tmLanguage"
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 683.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "templates/project.html",
+					"settings":
+					{
+						"buffer_size": 2276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								81,
+								81
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
