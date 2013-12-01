@@ -4,6 +4,14 @@ Tasks = new Meteor.Collection('tasks');
 if (Meteor.isClient) {
 
 	trackingSession = 0;
+
+	urlify = function(text) {
+	    var urlRegex = /(https?:\/\/[^\s]+)/g;
+	    return text.replace(urlRegex, function(url) {
+	        return '<a target="_blank" href="' + url + '">' + url + '</a>';
+	    })
+	}
+
 	//Routing
 	Template.content.currentPage = function (page) {
 		return Session.equals("page", page);
@@ -62,7 +70,7 @@ if (Meteor.isClient) {
 	}
 
 	Template.projects.events = {
-		'click input.add' : function() {
+		'click button.add' : function() {
 			insertProject();
 		},
 
@@ -85,6 +93,10 @@ if (Meteor.isClient) {
 			mod = Projects.findOne({_id : Session.get("delete-id")});
 		}
 		return mod;
+	}
+
+	Template.deletecontent.deleteType = function() {
+		return Session.get("delete-type");
 	}
 
 	Template.deletecontent.events = {

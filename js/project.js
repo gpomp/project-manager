@@ -19,6 +19,24 @@ if (Meteor.isClient) {
 		return Session.equals("task_id", this._id) ? 'selected' : '';
 	}
 
+	Template.tasks.taskDone = function() {
+		var checkbox = '<input type="checkbox">';
+		if(this.done) checkbox = '<input type="checkbox" checked>';
+		return checkbox;
+	}
+
+	Template.tasks.doneColor = function() {
+		return (this.done) ? "done" : "";
+	}
+
+	Template.tasks.timeHours = function() {
+		return Math.round(this.time / 60);
+	}
+
+	Template.tasks.estimationHours = function() {
+		return Math.round(this.estimation / 60);
+	}
+
 	getCurrentProject = function() {
 		var pid = Session.get("current_id");
 		var request = Projects.find({_id : pid});
@@ -50,16 +68,15 @@ if (Meteor.isClient) {
 
 	Template.project.events = {
 
-		"click a.delete" : function(e) {
-			console.log("delete");
-			Session.set("delete-type", "poject");
+		"click a.delete-project" : function(e) {
+			Session.set("delete-type", "project");
 			Session.set("delete-id", this._id);
 			$("#delete-modal").modal('show');
 		}
 	}
 
 	Template.tasks.events = {
-		'click input.add-task' : function() {
+		'click button.add-task' : function() {
 			insertTask();
 		},
 
@@ -69,10 +86,16 @@ if (Meteor.isClient) {
 			}
 		},
 
-		'click .delete' : function(e) {
+		'click .delete-task' : function(e) {
+			e.preventDefault();
 			Session.set("delete-type", "task");
 			Session.set("delete-id", this._id);
 			$("#delete-modal").modal('show');
+		},
+
+		'change input[type=checkbox]' : function(e) {
+			var task = Tasks.update({_id:this._id}, {$set: {done: e.currentTarget.checked}});
+
 		}
 	}
 }

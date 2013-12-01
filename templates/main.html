@@ -33,8 +33,12 @@
 			</select>
 		</div>
 		<div>
-			<input id="pr-name" type="text"/>
-			<input type="button" class="add btn" value="add project"/>
+			<div class="input-group">
+				<input placeholder="New Project Name..." id="pr-name" class="form-control" type="text"/>
+				<span class="input-group-addon">
+					<button class="add btn btn-default"></button>
+				</span>
+			</div>
 		</div>
 	</div>
 </template>
@@ -48,10 +52,10 @@
 	  	  {{#with deleteModel}}
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        <h4 class="modal-title" id="myModalLabel">Delete a task</h4>
+	        <h4 class="modal-title" id="myModalLabel">Delete a {{deleteType}}</h4>
 	      </div>
 	      <div class="modal-body">
-	        Are you sure you want to delete the task: {{this.name}}?
+	        Are you sure you want to delete the {{deleteType}}: {{this.name}}?
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

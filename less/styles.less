@@ -8,17 +8,18 @@ body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight:400;
 	color: #FFF;
+	background: #000;
 }
 
-input[type=text] {
+input[type=text], input[type=button] {
 	.form-control();
 	height: auto;
-	display: inline-block;
 }
 
-select {
+select, textarea {
 	.form-control();
 	height: auto;
+	margin-bottom: 0.5em;
 }
 
 a {
@@ -29,13 +30,33 @@ a {
 	}
 }
 
+.input-group {
+	.input-group-addon {
+		padding: 0;
+	}
+	button {
+		background: transparent;
+		border: 0;
+		border-radius: none;
+		box-shadow: none;
+
+		&:empty {
+			width: 3em;
+		}
+
+		&:hover {
+			color: #FFF;
+		}
+	}
+}
+
 .project-title {
 	h1 {
 		font-weight: 600;
 		.make-xs-column(8);
 	}
 
-	a.delete {
+	a.delete-project {
 		.make-xs-column(2);
 		font-size: 2em;
 		margin-top: 1em;
@@ -46,9 +67,43 @@ a {
 	}
 }
 
+.dashboard {
+	border-bottom: 4px solid #FFF;
+	.clearfix();
+	padding-bottom: 2em;
+	& > .row > div {
+		.make-xs-column(6);
 
+		&.all-utils {
+			padding-left: 0;
+		}
+	}
 
-h2, h3 {
+	.charts {
+		margin-top: 1em;
+		& > div {
+			width: 10em;
+			background: #FFF;
+			border: 1px solid #FFF;
+			height: 20px;
+			position: relative;
+			display: block;
+			margin: 1em 0;
+
+			& > div {
+				height: 19px;
+				background: #CCC;
+			}
+		}
+	}
+}
+
+h2 {
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+h3 {
 	font-weight: 300;
 	text-transform: uppercase;
 }
@@ -65,6 +120,7 @@ ul {
 			width: 100%;
 			padding: 1em;
 			border-bottom: 1px solid #AAA;
+			border-left: 4px solid transparent;
 			.clearfix();
 			
 
@@ -100,6 +156,10 @@ ul {
 			&:last-child {
 				border-bottom: 0;
 			}
+
+			&.done {
+				border-left: 4px solid green;
+			}
 		}
 	}
 
@@ -133,14 +193,32 @@ ul {
 	padding: 1em;
 	background: #000;
 	.clearfix();
-	div {
+	& > div {
 		&:first-child {
 			float: left;
 		}
 
 		&:last-child {
+			.make-xs-column(5);
 			float: right;
+
+			.input-group {
+				button {
+				.glyphicon();
+				.glyphicon-plus-sign();
+				}
+			}
 		}
+	}
+}
+
+.project-tasks {
+	.add-task-section {
+		padding: 1em;
+	}
+	.add-task {
+		.glyphicon();
+		.glyphicon-tasks();
 	}
 }
 
@@ -149,6 +227,7 @@ ul {
 	label {
 		.make-xs-column(4);
 		text-align: center;
+		margin-right: 4em;
 	}
 }
 
@@ -161,9 +240,10 @@ ul {
 		font-size: 4em;
 		font-weight: 600;
 		background: transparent;
-		border: 0;
+		border: 1px solid #CCC;
 		color: #FFF;
 		text-align: center;
+		margin-right: 1em;
 	}
 }
 
@@ -186,6 +266,13 @@ ul {
 
 			a.delete {
 				.make-xs-column(1);
+			}
+
+			&.done {
+				span, p {
+					text-decoration: line-through;
+				}
+				
 			}
 		}
 	}

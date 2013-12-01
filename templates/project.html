@@ -2,8 +2,9 @@
 	{{#with model}}
 	<div class="row project-title">
 		<h1>{{this.name}}</h1>
-		<a href="#" class="glyphicon glyphicon-remove-circle delete"></a>
+		<a href="#" class="glyphicon glyphicon-remove-circle delete-project"></a>
 	</div>
+	{{> dashboard}}
 	{{/with}}
 	{{> tasks}}
 
@@ -17,19 +18,21 @@
 <template name="tasks">
 
 	<div class="project-tasks">
-		<div class="row">
-			<div class="add-task-section">
-				<input type="text" id="task-name"/>
-				<input type="button" class="add-task btn" value="add Task">
+		<div class="add-task-section">
+			<div class="input-group">
+				<input type="text" id="task-name" class="form-control" placeholder="New Task Name Here..."/>
+				<span class="input-group-addon">
+					<button class="add-task btn btn-default"></button>
+				</span>
 			</div>
 		</div>
 		<ul>
 			{{#each taskList}}
-				<li class="{{isSelected}}">
+				<li class="{{isSelected}} {{doneColor}}">
 					<a href="/project/{{this.project}}/{{this._id}}">{{this.name}}</a>
-					<span>{{this.time}}/{{this.estimation}}</span>
-					<span class="done"><input type="checkbox"></span>
-					<a href="#" title="Delete task" class="glyphicon glyphicon-remove-circle delete"></a>
+					<span>{{timeHours}}/{{estimationHours}}</span>
+					<span class="done">{{{taskDone}}}</span>
+					<a href="#" title="Delete task" class="glyphicon glyphicon-remove-circle delete-task"></a>
 				</li>
 			{{/each}}
 		</ul>
@@ -51,23 +54,25 @@
 						<label for="time-spent">Time already spent:</label>
 					</div>
 					<div class="time-inputs">
-						<input class="{{isValid}}" type="text" id="time-estimation" value="{{this.estimation}}"/>
-						<input type="text" id="time-spent" value="{{this.time}}"/>
+						<input class="{{isValid}}" type="text" id="time-estimation" value="{{getEstimation}}"/>
+						<input type="text" id="time-spent" value="{{getTime}}"/>
 					</div>
 				</div>
 				<div>
 					<h3>Utils</h3>
 					<div class="add-utils-section">
 						<label for="add-utils">Add utilities:</label>
-						<textarea id="add-utils"></textarea>
-						<input type="button" class="util-btn btn" value="Add it!"/>
+						<textarea placeholder="Place util links, info, advise here" id="add-utils" class="form-control"></textarea>
+						<input type="button" class="util-btn btn" value="Add Utility"/>
 					</div>
 				</div>
 			</div>
-			<div class="utils">
-				{{#each utilsList}}
-					<p>{{this}}</p>
-				{{/each}}
+			<div class="row">
+				<div class="utils">
+					{{#each utilsList}}
+						<p>{{{this}}}</p>
+					{{/each}}
+				</div>
 			</div>
 			{{> subtasks}}
 			<div class="row">
@@ -75,7 +80,6 @@
 			</div>
 		{{/with}}
 	</div>
-	
 </template>
 
 <template name="subtasks">
@@ -84,18 +88,18 @@
 			<h3>subTasks</h3>
 			<div class="add-subtask-section">
 				<label for="add-subtask">Add subTask:</label>
-				<input type="text" id="add-subtask"/>
-				<textarea id="subtask-descr"></textarea>
-				<input type="button" class="subtask-btn" value="Add it!"/>
+				<input placeholder="Sub-task name" type="text" id="add-subtask"/>
+				<textarea placeholder="Sub-task description" id="subtask-descr"></textarea>
+				<input type="button" class="subtask-btn" value="Add Sub-task"/>
 			</div>
 		</div>
 		<ul>
 			{{#each subtasksList}}
-				<li>
+				<li class="{{doneCross}}">
 					<span>{{this.name}}</span>
-					<p>{{this.longdescr}}</p>
+					<p>{{{this.longdescr}}}</p>
 					<div class="done">
-						<input type="checkbox" checked="{{this.done}}">
+						{{{isDone}}}
 					</div>
 					<a href="#" title="Delete task" class="glyphicon glyphicon-remove-circle delete-subtask"></a>
 				</li>
@@ -103,4 +107,3 @@
 		</ul>
 	</div>
 </template>
-

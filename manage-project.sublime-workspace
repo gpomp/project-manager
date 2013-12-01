@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"subTas",
+				"subTasks"
+			],
+			[
+				"co",
+				"make-xs-column"
+			],
+			[
+				"dele",
+				"delete-modal"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
 				"ma",
 				"make-xs-column"
 			],
@@ -48,10 +76,6 @@
 				"function"
 			],
 			[
-				"marg",
-				"margin-bottom"
-			],
-			[
 				"mar",
 				"margin"
 			],
@@ -76,10 +100,6 @@
 				"background"
 			],
 			[
-				"padd",
-				"padding"
-			],
-			[
 				"pad",
 				"padding"
 			]
@@ -91,31 +111,23 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 1655,
+				"buffer_size": 2776,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "templates/main.html",
+			"file": "js/project-dashboard.html",
 			"settings":
 			{
-				"buffer_size": 793,
+				"buffer_size": 343,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/task.js",
+			"file": "templates/project-dashboard.js",
 			"settings":
 			{
-				"buffer_size": 2605,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "less/styles.less",
-			"settings":
-			{
-				"buffer_size": 1505,
+				"buffer_size": 162,
 				"line_ending": "Windows"
 			}
 		},
@@ -123,7 +135,39 @@
 			"file": "templates/project.html",
 			"settings":
 			{
-				"buffer_size": 2276,
+				"buffer_size": 2824,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "templates/main.html",
+			"settings":
+			{
+				"buffer_size": 1705,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/task.js",
+			"settings":
+			{
+				"buffer_size": 3505,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "less/styles.less",
+			"settings":
+			{
+				"buffer_size": 2625,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/project.js",
+			"settings":
+			{
+				"buffer_size": 1689,
 				"line_ending": "Windows"
 			}
 		}
@@ -164,8 +208,9 @@
 	},
 	"file_history":
 	[
-		"/D/work/manage-projects/js/project.js",
 		"/D/work/manage-projects/packages/bootstrap-less/lib/less/variables.lessimport",
+		"/D/work/manage-projects/packages/bootstrap-less/lib/less/mixins.lessimport",
+		"/D/work/manage-projects/js/project.js",
 		"/D/work/manage-projects/templates/project.html",
 		"/D/work/manage-projects/.meteor/local/build-garbage-1ewal6q/programs/client/packages/livedata.js",
 		"/D/work/manage-projects/.meteor/local/build-garbage-1ewal6q/programs/client/app.html",
@@ -232,6 +277,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".form-con",
+			"Tasks.remove({project : this._id});",
+			"consol",
+			"button",
+			".btn",
+			"\"bu",
+			"hs",
 			"page",
 			"projectList",
 			"selected_name",
@@ -258,7 +310,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -266,15 +318,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 1655,
+						"buffer_size": 2776,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								112,
-								112
+								87,
+								109
 							]
 						],
 						"settings":
@@ -290,52 +342,51 @@
 				},
 				{
 					"buffer": 1,
-					"file": "templates/main.html",
+					"file": "js/project-dashboard.html",
 					"settings":
 					{
-						"buffer_size": 793,
+						"buffer_size": 343,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								445,
-								445
+								60,
+								60
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Handlebars/Handlebars.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 363.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "js/task.js",
+					"file": "templates/project-dashboard.js",
 					"settings":
 					{
-						"buffer_size": 2605,
+						"buffer_size": 162,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								257,
-								257
+								155,
+								155
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 36.0,
+						"translation.x": 257.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -343,44 +394,18 @@
 				},
 				{
 					"buffer": 3,
-					"file": "less/styles.less",
-					"settings":
-					{
-						"buffer_size": 1505,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								531,
-								531
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 683.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "templates/project.html",
 					"settings":
 					{
-						"buffer_size": 2276,
+						"buffer_size": 2824,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								81,
-								81
+								288,
+								288
 							]
 						],
 						"settings":
@@ -389,6 +414,114 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "templates/main.html",
+					"settings":
+					{
+						"buffer_size": 1705,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								171,
+								171
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Handlebars/Handlebars.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/task.js",
+					"settings":
+					{
+						"buffer_size": 3505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								564,
+								578
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 128.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "less/styles.less",
+					"settings":
+					{
+						"buffer_size": 2625,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								697,
+								697
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "js/project.js",
+					"settings":
+					{
+						"buffer_size": 1689,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								271,
+								328
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 66.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},

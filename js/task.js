@@ -8,12 +8,30 @@ if (Meteor.isClient) {
 		return getCurrentTask().fetch()[0].subTasks || "";
 	}
 
+	Template.subtasks.isDone = function() {
+		var checkbox = '<input type="checkbox">';
+		if(this.done) checkbox = '<input type="checkbox" checked>';
+		return checkbox;
+	}
+
+	Template.subtasks.doneCross = function() {
+		return (this.done) ? "done" : "";
+	}
+
 	Template.task.model = function() {
 		return getCurrentTask().fetch()[0];
 	}
 
 	Template.task.isValid = function() {
 		return (this.estimation === 0) ? 'error' : '';
+	}
+
+	Template.task.getTime = function() {
+		return Math.round(this.time / 60);
+	}
+
+	Template.task.getEstimation = function() {		
+		return Math.round(this.estimation / 60);
 	}
 
 	getCurrentTask = function() {
@@ -45,6 +63,14 @@ if (Meteor.isClient) {
 			e.preventDefault();
 			toggleTracking();
 		});
+	}
+
+	updateEstimation = function(t) {
+		var minTime = t * 60;
+		Tasks.update(
+			{_id : Session.get("task_id")},
+			{$set: {estimation: minTime}}
+		);
 	}
 
 	toggleTracking = function() {
@@ -83,8 +109,15 @@ if (Meteor.isClient) {
 	}
 
 	Template.task.events = {
+
+		'keydown #time-estimation' : function(e) {
+			if(e.which === 13) {
+				updateEstimation(document.getElementById("time-estimation").value);
+			}
+		},
+
 		'click input.util-btn' : function() {
-			var toAdd = document.getElementById("add-utils").value;
+			var toAdd = urlify(document.getElementById("add-utils").value);
 			Tasks.upsert(
 				{_id : Session.get("task_id")},
 				{$addToSet:{utils:toAdd}}
@@ -97,11 +130,16 @@ if (Meteor.isClient) {
 			var subTask = {
 				name:taskName,
 				done:false,
-				longdescr:longdescr
+				longdescr:urlify(longdescr)
 			}
 			Tasks.upsert(
 				{_id : Session.get("task_id")},
-				{$addToSet:{subTasks:subTask}}
+				{$addToSet:{subTasks:subTask}},
+
+				function() {
+					document.getElementById("add-subtask").value = "";
+					document.getElementById("subtask-descr").value = "";
+				}
 			);
 		},
 
@@ -113,8 +151,19 @@ if (Meteor.isClient) {
 
 	Template.subtasks.events = {
 		'click a.delete-subtask' : function(e) {
-			var id = $(e.currentTarget).parent().index();
-			//Tasks.update({_id : this._id}, {$pull: {subTasks:}})
+			e.preventDefault();
+			Tasks.update({_id : Session.get("task_id")}, {$pull: {subTasks:this}})
+		},
+
+		'change input[type=checkbox]' : function(e) {
+			var obj = this;
+			obj.done = e.currentTarget.checked;
+			var taskId = $(e.currentTarget).parent().parent().index();
+
+			var modifier = {$set: {}};
+			modifier.$set["subTasks." + taskId + ".done"] = e.currentTarget.checked;
+			Tasks.update({_id : Session.get("task_id")}, modifier);
+
 		}
 	}
 }

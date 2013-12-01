@@ -1,0 +1,48 @@
+<template name="dashboard">
+	
+	<div class="dashboard">
+		<div class="row">
+			<h2>dashboard</h2>
+			<div class="all-utils">
+				<h3>Utilites</h3>
+				{{#each allUtils}}
+					{{#each this.utils}}
+					<p>{{{this}}}</p>
+					{{/each}}
+				{{/each}}
+			</div>
+
+			<div class="stats">
+				<h3>Statistics</h3>
+				{{> stats}}
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="stats">
+	{{#with allTasks}}
+	<div class="general-time">
+		<div>Total Estimation: <span>{{totalEstimation}} hours</span></div>
+		<div>Total Spent: <span>{{totalSpent}} hours</span></div>
+	</div>
+
+	<div class="charts">
+		<span>Time left</span>
+		<div>
+			{{#with timeLeft}}
+			<div style="width:{{this}}%; background:rgb({{colorValue}})"></div>
+			{{/with}}
+		</div>
+		<span>Tasks resolved</span>
+		<div>
+			<div style="width:{{taskResolved}}%"></div>
+		</div>
+		<span>Sub-Tasks resolved</span>
+		<div>
+			<div style="width:{{subtaskResolved}}%"></div>
+		</div>
+	</div>
+	{{/with}}
+	
+</template>
