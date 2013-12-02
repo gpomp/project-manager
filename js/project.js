@@ -30,11 +30,11 @@ if (Meteor.isClient) {
 	}
 
 	Template.tasks.timeHours = function() {
-		return Math.round(this.time / 60);
+		return Math.round(this.time / 60 * 10) / 10;
 	}
 
 	Template.tasks.estimationHours = function() {
-		return Math.round(this.estimation / 60);
+		return Math.round(this.estimation / 60 * 10) / 10;
 	}
 
 	getCurrentProject = function() {

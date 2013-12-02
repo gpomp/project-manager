@@ -1,5 +1,7 @@
 @import "packages/bootstrap-less/lib/less/bootstrap.lessimport";
 
+@redAlert : #ae1201;
+
 html {
 	font-size: 100%;
 }
@@ -8,7 +10,8 @@ body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight:400;
 	color: #FFF;
-	background: #000;
+	background: #90b2c6;
+	#gradient.vertical(#90b2c6, #dae4ea);
 }
 
 input[type=text], input[type=button] {
@@ -28,6 +31,10 @@ a {
 	&:hover {
 		color:#CCC;
 	}
+}
+
+.alert {
+	color: @redAlert;
 }
 
 .input-group {
@@ -51,18 +58,26 @@ a {
 }
 
 .project-title {
+	border-top: 4px solid #FFF;
+	border-bottom: 4px solid #FFF;
 	h1 {
 		font-weight: 600;
 		.make-xs-column(8);
+		font-size: 5em;
+		text-transform: uppercase;
+		margin-top: 0.5em;
 	}
 
 	a.delete-project {
-		.make-xs-column(2);
+		float: right;
 		font-size: 2em;
 		margin-top: 1em;
 		&:hover {
 			text-decoration: none;
 			color: #FFF;
+		}
+		&.glyphicon:empty {
+			width: 1.75em;
 		}
 	}
 }
@@ -82,17 +97,23 @@ a {
 	.charts {
 		margin-top: 1em;
 		& > div {
-			width: 10em;
-			background: #FFF;
-			border: 1px solid #FFF;
-			height: 20px;
+			width: 20em;
+			background: #000;
+			height: 44px;
 			position: relative;
 			display: block;
 			margin: 1em 0;
+			-webkit-border-radius: 5px;
+			border-radius: 5px;
+			border: 2px solid #FFF;
 
 			& > div {
-				height: 19px;
+				height: 40px;
 				background: #CCC;
+
+				-webkit-border-radius: 5px;
+				border-radius: 5px;
+				#gradient.horizontal-three-colors(@redAlert, #f2b703, 50%, #01ae12);
 			}
 		}
 	}
@@ -106,6 +127,8 @@ h2 {
 h3 {
 	font-weight: 300;
 	text-transform: uppercase;
+
+	border-bottom: 1px solid #FFF;
 }
 
 ul {
@@ -177,7 +200,11 @@ ul {
 }
 
 .container {
-	background: #333;
+	background: transparent;
+
+	.box-shadow( 0px 3px 10px 10px rgba(0, 0, 0, 0.2));
+
+	#gradient.vertical();
 	padding: 0;
 	@media (max-width:@screen-sm-max) {
 		width: 100%;
@@ -192,6 +219,7 @@ ul {
 	width: 100%;
 	padding: 1em;
 	background: #000;
+	#gradient.vertical(#2e2e2e, #000);
 	.clearfix();
 	& > div {
 		&:first-child {
@@ -275,6 +303,12 @@ ul {
 				
 			}
 		}
+	}
+}
+
+.task {
+	.badge {
+		background-color: @redAlert;
 	}
 }
 

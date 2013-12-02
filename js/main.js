@@ -100,6 +100,7 @@ if (Meteor.isClient) {
 
 	app = new Router;
 	Meteor.startup(function () {
+		Session.setDefault("isTracking", false);
 		Backbone.history.start({pushState: true, root : "/"});
 	});
 

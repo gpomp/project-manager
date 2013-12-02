@@ -27,11 +27,19 @@ if (Meteor.isClient) {
 	}
 
 	Template.task.getTime = function() {
-		return Math.round(this.time / 60);
+		return Math.round(this.time / 60 * 10) / 10;
 	}
 
 	Template.task.getEstimation = function() {		
-		return Math.round(this.estimation / 60);
+		return Math.round(this.estimation / 60 * 10) / 10;
+	}
+
+	Template.task.isTrakingBadge = function() {
+		return (Session.equals("isTracking", true)) ? "display:inline-block" : "display:none";
+	}
+
+	Template.task.getSince = function() {
+		return Math.round((new Date().getTime() - Session.get("startTrackTime")) / 1000 / 60);
 	}
 
 	getCurrentTask = function() {
@@ -73,13 +81,19 @@ if (Meteor.isClient) {
 		);
 	}
 
-	toggleTracking = function() {
+	toggleTracking = function() { 
+		console.log("toggleTracking");
 		$(".add-task-section, .add-utils-section, .add-subtask-section").css("display", "none");
-		$("input.track-time").toggleClass("tracking");
+		if(Session.equals("isTracking", true)) {
+			Session.set("isTracking", false);
+		} else {
+			Session.set("isTracking", true);
+		}
 
-		if($("input.track-time").hasClass("tracking")) {
+		if(Session.equals("isTracking", true)) {
 			$("input.track-time").attr("value", "stop tracking");
 			clearInterval(trackingSession);
+			Session.set("startTrackTime", new Date().getTime());
 			Session.set("trackTime", new Date().getTime());
 			trackingSession = setInterval(function() { trackTime(); }, 1000);
 		} else {
@@ -143,7 +157,7 @@ if (Meteor.isClient) {
 			);
 		},
 
-		'click track-time' : function() {
+		'click input.track-time' : function(e) {
 			toggleTracking();
 		}
 

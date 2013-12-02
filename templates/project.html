@@ -2,7 +2,7 @@
 	{{#with model}}
 	<div class="row project-title">
 		<h1>{{this.name}}</h1>
-		<a href="#" class="glyphicon glyphicon-remove-circle delete-project"></a>
+		<a href="#" class="glyphicon glyphicon-remove-circle delete-project" title="Delete Project"></a>
 	</div>
 	{{> dashboard}}
 	{{/with}}
@@ -43,7 +43,7 @@
 	<div class="task">
 		{{#with model}}
 			<div class="row">
-				<h2>{{this.name}}</h2>
+				<h2>{{this.name}} <span class="badge" style="{{isTrakingBadge}}">Tracking now since {{getSince}}mn...</span></h2>
 				<div>
 					<h3>time</h3>
 					<div class="time-labels">
@@ -98,7 +98,7 @@
 					<div class="done">
 						{{{isDone}}}
 					</div>
-					<a href="#" title="Delete task" class="glyphicon glyphicon-remove-circle delete-subtask"></a>
+					<a href="#" title="Delete sub-task" class="glyphicon glyphicon-remove-circle delete-subtask"></a>
 				</li>
 			{{/each}}
 		</ul>

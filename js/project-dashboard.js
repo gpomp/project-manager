@@ -14,7 +14,7 @@ if (Meteor.isClient) {
 			total += t.estimation;
 		});
 
-		return Math.round(total / 60);
+		return Math.round(total / 60 * 10) / 10;
 	}
 
 	Template.stats.totalSpent = function() {
@@ -23,7 +23,7 @@ if (Meteor.isClient) {
 			total += t.time;
 		});
 
-		return Math.round(total / 60);
+		return Math.round(total / 60 * 10) / 10;
 	}
 
 	Template.stats.timeLeft = function() {
