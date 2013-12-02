@@ -60,7 +60,10 @@ if (Meteor.isClient) {
 			project:Session.get("current_id"),
 			time:0,
 			estimation:0,
-			done:false
+			done:false,
+			owner:Meteor.userId(),
+			subTasks: [],
+			utils: []
 		}, function(error, _id) {
 			app.navigate("/project/" + Session.get("current_id") + "/" + _id, {trigger: true});
 		});

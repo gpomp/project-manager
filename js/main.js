@@ -1,7 +1,58 @@
+
+if(Meteor.isServer) {
+	Meteor.publish("getProjects", function() {
+		return Projects.find({owner:this.userId});
+	});
+
+	Meteor.publish("getTasks", function(cId) {
+		return Tasks.find({project : cId, owner:this.userId});
+	});
+
+	Meteor.publish("getCurrentTask", function(tId) {
+		return Tasks.find({_id : tId, owner:this.userId});
+	});
+}
+
+
+
+
 Projects = new Meteor.Collection('projects');
 Tasks = new Meteor.Collection('tasks');
 
+Projects.allow({
+	insert: function(userId, project) {
+		return userId && project.owner === userId;
+	},
+
+	update: function(userId, project) {
+		return userId && project.owner === userId;
+	},
+
+	remove: function(userId, project) {
+		return userId && project.owner === userId;
+	}
+});
+
+Tasks.allow({
+	insert: function(userId, task) {
+		return userId && task.owner === userId;
+	},
+
+	update: function(userId, task) {
+		return userId && task.owner === userId;
+	},
+
+	remove: function(userId, task) {
+		return userId && task.owner === userId;
+	}
+});
+
 if (Meteor.isClient) {
+	Deps.autorun(function() {
+		Meteor.subscribe("getProjects");
+		Meteor.subscribe("getTasks", Session.get("current_id"));
+		Meteor.subscribe("getCurrentTask", Session.get("task_id"));
+	});
 
 	trackingSession = 0;
 
@@ -60,10 +111,12 @@ if (Meteor.isClient) {
 
 	insertProject = function() {
 		var prName = document.getElementById("pr-name").value;
-		if(prName.length !== 0) {
+		if(prName.length !== 0 && Meteor.userId() !== null) {
 			Projects.insert({
-				name:prName
+				name:prName,
+				owner:Meteor.userId()
 			}, function(error, _id) {
+				console.log(error);
 				app.navigate("project/" + _id, {trigger: true});
 			});
 		}

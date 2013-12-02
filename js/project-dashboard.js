@@ -56,6 +56,7 @@ if (Meteor.isClient) {
 		var resolved = 0;
 		var total = 0;
 		this.forEach(function(t) {
+			if(!t.subTasks) return;
 			total += t.subTasks.length;
 			for (var i = t.subTasks.length - 1; i >= 0; i--) {
 				if(t.subTasks[i].done) resolved += 1;

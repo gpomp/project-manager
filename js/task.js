@@ -118,7 +118,7 @@ if (Meteor.isClient) {
 
 		'click input.util-btn' : function() {
 			var toAdd = urlify(document.getElementById("add-utils").value);
-			Tasks.upsert(
+			Tasks.update(
 				{_id : Session.get("task_id")},
 				{$addToSet:{utils:toAdd}}
 			);
@@ -132,11 +132,11 @@ if (Meteor.isClient) {
 				done:false,
 				longdescr:urlify(longdescr)
 			}
-			Tasks.upsert(
+			Tasks.update(
 				{_id : Session.get("task_id")},
 				{$addToSet:{subTasks:subTask}},
 
-				function() {
+				function(error) {
 					document.getElementById("add-subtask").value = "";
 					document.getElementById("subtask-descr").value = "";
 				}
