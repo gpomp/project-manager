@@ -39,7 +39,7 @@ if (Meteor.isClient) {
 	}
 
 	Template.task.getSince = function() {
-		return Math.round((new Date().getTime() - Session.get("startTrackTime")) / 1000 / 60);
+		return Session.get("countCurrentTime");
 	}
 
 	getCurrentTask = function() {
@@ -81,19 +81,28 @@ if (Meteor.isClient) {
 		);
 	}
 
+
+
+	updateTimeSpent = function(t) {
+		var minTime = t * 60;
+		Tasks.update(
+			{_id : Session.get("task_id")},
+			{$set: {time: minTime}}
+		);
+	}
+
 	toggleTracking = function() { 
-		console.log("toggleTracking");
 		$(".add-task-section, .add-utils-section, .add-subtask-section").css("display", "none");
 		if(Session.equals("isTracking", true)) {
 			Session.set("isTracking", false);
 		} else {
 			Session.set("isTracking", true);
 		}
-
 		if(Session.equals("isTracking", true)) {
 			$("input.track-time").attr("value", "stop tracking");
 			clearInterval(trackingSession);
 			Session.set("startTrackTime", new Date().getTime());
+			Session.set("countCurrentTime", 0);
 			Session.set("trackTime", new Date().getTime());
 			trackingSession = setInterval(function() { trackTime(); }, 1000);
 		} else {
@@ -117,7 +126,7 @@ if (Meteor.isClient) {
 				{_id : Session.get("task_id")},
 				{$inc: {time: Math.round(diff / 1000 / 60)}}
 			);
-
+		Session.set("countCurrentTime", Math.round((new Date().getTime() - Session.get("startTrackTime")) / 1000 / 60));
 		Session.set("trackTime", new Date().getTime());
 
 	}
@@ -127,6 +136,12 @@ if (Meteor.isClient) {
 		'keydown #time-estimation' : function(e) {
 			if(e.which === 13) {
 				updateEstimation(document.getElementById("time-estimation").value);
+			}
+		},
+
+		'keydown #time-spent' : function(e) {
+			if(e.which === 13) {
+				updateTimeSpent(document.getElementById("time-estimation").value);
 			}
 		},
 

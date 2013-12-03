@@ -36,13 +36,6 @@ if (Meteor.isClient) {
 		return Math.floor((1 - totalT / totalE) * 100);
 	}
 
-	Template.stats.colorValue = function() {
-		var r = (100 - this.valueOf()) / 100 * 255;
-		var g = (this.valueOf()) / 100 * 255;
-
-		return r + "," + g + ", 0";
-	}
-
 	Template.stats.taskResolved = function() {
 		var resolved = 0;
 		this.forEach(function(t) {

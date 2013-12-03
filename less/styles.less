@@ -109,11 +109,18 @@ a {
 
 			& > div {
 				height: 40px;
-				background: #CCC;
-
+				overflow: hidden;
 				-webkit-border-radius: 5px;
 				border-radius: 5px;
-				#gradient.horizontal-three-colors(@redAlert, #f2b703, 50%, #01ae12);
+				& > div {
+					width:20em;
+					height: 40px;
+					background: #CCC;
+
+					-webkit-border-radius: 5px;
+					border-radius: 5px;
+					#gradient.horizontal-three-colors(@redAlert, #f2b703, 50%, #01ae12);
+				}
 			}
 		}
 	}
